@@ -10,6 +10,6 @@ const recipeToMarkdown = function(recipe: Recipe): string {
   return h1(recipe.title) + "\n" + h2("Ingredients") + "\n" + list(recipe.ingredients)
 }
 
-const jsonFile: string = readFileSync("./recipe.json", {encoding: "utf-8"})
+const jsonFile: string = readFileSync(process.argv[2], {encoding: "utf-8"})
 const recipe: Recipe = JSON.parse(jsonFile);
 console.log(recipeToMarkdown(recipe));
