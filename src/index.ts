@@ -19,4 +19,5 @@ const recipeToMarkdown = function(recipe: Recipe): string {
 }
 
 const jsonFile: string = readFileSync("./recipe.json", {encoding: "utf-8"})
-console.log(jsonFile);
+const recipe: Recipe = JSON.parse(jsonFile);
+console.log(recipe);
