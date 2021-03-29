@@ -13,16 +13,9 @@ const recipes: Recipe[] = [{
   ingredients: ["Tomatoes", "You know the rest"]
 }]
 
-
-//const recipeToMarkdown = function(recipe: Recipe): string {}
-
-const printRecipe = function(recipe: Recipe): void {
-  console.log(h1(recipe.title));
-  console.log(h2("Ingredients"));
-  console.log(list(recipe.ingredients));
+const recipeToMarkdown = function(recipe: Recipe): string {
+  return h1(recipe.title) + h2("Ingredients") + list(recipe.ingredients);
 }
 
-// printRecipe(recipes[0]);
-// printRecipe(recipes[1]);
-// recipes.forEach(printRecipe)
-printRecipe(recipes[0]);
+const recipe0AsMarkdown = recipeToMarkdown(recipes[0])
+console.log(recipe0AsMarkdown);
